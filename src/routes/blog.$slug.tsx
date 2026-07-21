@@ -1,10 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell } from "@/components/layout/PageShell";
-import { getPost, posts } from "@/data/blog";
+import { getPost, posts, type BlogPost } from "@/data/blog";
 import { EnquiryCTA } from "@/components/EnquiryCTA";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { post: BlogPost } => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
     return { post };
