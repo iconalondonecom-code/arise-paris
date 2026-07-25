@@ -481,7 +481,7 @@ function HomePage() {
                 <h3 className="mt-3 text-xl md:text-2xl leading-tight text-[var(--ink)] font-serif group-hover:text-[var(--gold)] transition">{post.title}</h3>
                 <p className="mt-3 text-sm text-[var(--body)] leading-relaxed line-clamp-3">{post.excerpt}</p>
                 <div className="mt-6 flex items-center justify-between text-[10px] tracking-[0.28em] uppercase text-[var(--body)]">
-                  <span>{post.readingTime ?? "5 min read"}</span>
+                  <span>{post.readTime}</span>
                   <span className="inline-flex items-center gap-1 text-[var(--ink)]">Read Article <ArrowRight className="h-3 w-3" /></span>
                 </div>
               </Link>

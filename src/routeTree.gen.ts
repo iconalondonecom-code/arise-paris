@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BecomeADistributorRouteImport } from './routes/become-a-distributor'
 import { Route as B2bPartnershipRouteImport } from './routes/b2b-partnership'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
@@ -56,6 +57,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/products/',
   path: '/products/',
@@ -78,6 +84,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/b2b-partnership': typeof B2bPartnershipRoute
   '/become-a-distributor': typeof BecomeADistributorRoute
@@ -91,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/b2b-partnership': typeof B2bPartnershipRoute
   '/become-a-distributor': typeof BecomeADistributorRoute
@@ -105,6 +113,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/b2b-partnership': typeof B2bPartnershipRoute
   '/become-a-distributor': typeof BecomeADistributorRoute
@@ -120,6 +129,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/about'
     | '/b2b-partnership'
     | '/become-a-distributor'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | '/about'
     | '/b2b-partnership'
     | '/become-a-distributor'
@@ -146,6 +157,7 @@ export interface FileRouteTypes {
     | '/products'
   id:
     | '__root__'
+    | '/'
     | '/about'
     | '/b2b-partnership'
     | '/become-a-distributor'
@@ -160,6 +172,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   B2bPartnershipRoute: typeof B2bPartnershipRoute
   BecomeADistributorRoute: typeof BecomeADistributorRoute
@@ -224,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/': {
       id: '/products/'
       path: '/products'
@@ -256,6 +276,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   B2bPartnershipRoute: B2bPartnershipRoute,
   BecomeADistributorRoute: BecomeADistributorRoute,
