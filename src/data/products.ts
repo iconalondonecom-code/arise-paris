@@ -6,6 +6,9 @@ import crush from "@/assets/crush.asset.json";
 import forestSpice from "@/assets/forest-spice.asset.json";
 import goodnessOud from "@/assets/goodness-oud.asset.json";
 import romantic from "@/assets/romantic.asset.json";
+import signature from "@/assets/signature.asset.json";
+import sweetLove from "@/assets/sweet-love.asset.json";
+import temptation from "@/assets/temptation.asset.json";
 
 export type CollectionGroup = "bold-dynamic" | "deep-rich" | "soft-expressive";
 
@@ -246,7 +249,7 @@ export const products: Product[] = [
       "Signature",
       "A clean and refined body spray with a polished signature identity, suitable for a versatile and confident presence.",
     ),
-    image: null,
+    image: signature.url,
     accent: "#5F7A94",
     accentSoft: "#EAEEF3",
     gradient: "linear-gradient(160deg, #B9BDC5 0%, #5F7A94 100%)",
@@ -264,12 +267,12 @@ export const products: Product[] = [
     size: "250 ml",
     fluidOunce: "8.45 fl. oz.",
     shortDescription:
-      "A soft and sweet body spray with a delicate pink identity, designed to express warmth, charm and everyday elegance.",
+      "A soft body spray with a delicate pink identity, created to express warmth, charm and everyday elegance.",
     detailedDescription: detail(
       "Sweet Love",
-      "A soft and sweet body spray with a delicate pink identity, designed to express warmth, charm and everyday elegance.",
+      "A soft body spray with a delicate pink identity, created to express warmth, charm and everyday elegance.",
     ),
-    image: null,
+    image: sweetLove.url,
     accent: "#D48AA8",
     accentSoft: "#FBEEF3",
     gradient: "linear-gradient(160deg, #FCE4EC 0%, #D48AA8 100%)",
@@ -292,7 +295,7 @@ export const products: Product[] = [
       "Temptation",
       "A captivating body spray with a deep and dramatic visual identity for a bold and memorable fragrance experience.",
     ),
-    image: null,
+    image: temptation.url,
     accent: "#7A1E4A",
     accentSoft: "#F1E1EA",
     gradient: "linear-gradient(160deg, #1A0812 0%, #B0246E 100%)",
