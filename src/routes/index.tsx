@@ -432,7 +432,15 @@ function HomePage() {
       {/* Ronak Group */}
       <section className="py-14 md:py-20" style={{ background: "var(--ivory)" }}>
         <div className="container-wide grid grid-cols-1 md:grid-cols-[auto_minmax(0,1fr)_auto] gap-8 items-center">
-          <img src={site.ronakLogo} alt="Ronak Group" className="h-16 w-auto" loading="lazy" />
+          <span className="inline-grid place-items-center rounded-xl bg-[#0B0B0F] px-6 py-5">
+            <img
+              src={site.ronakLogo}
+              alt="Ronak Group"
+              className="h-14 w-auto"
+              loading="lazy"
+              style={{ filter: "invert(1) brightness(2)" }}
+            />
+          </span>
           <div className="min-w-0">
             <h2 className="font-serif text-[26px] md:text-[34px] text-[var(--ink)]">
               Arise Paris — A Brand of Ronak Group
