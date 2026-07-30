@@ -438,7 +438,6 @@ function HomePage() {
               alt="Ronak Group"
               className="h-14 w-auto"
               loading="lazy"
-              style={{ filter: "invert(1) brightness(2)" }}
             />
           </span>
           <div className="min-w-0">
