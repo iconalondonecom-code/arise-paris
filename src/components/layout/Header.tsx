@@ -31,16 +31,16 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         solid
-          ? "bg-[var(--ink)]/95 backdrop-blur border-b border-white/5"
-          : "bg-transparent"
+          ? "bg-[#05091A]/95 backdrop-blur border-b border-white/10"
+          : "bg-gradient-to-b from-black/45 to-transparent"
       }`}
     >
-      <div className="container-lux flex items-center justify-between h-20 md:h-24">
+      <div className="container-wide flex items-center justify-between h-[72px] md:h-20">
         <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Arise Paris home">
           <img
             src={site.logo}
             alt="Arise Paris"
-            className="h-12 md:h-14 w-auto"
+            className="h-11 md:h-14 w-auto"
             style={{ filter: "invert(1) brightness(2)" }}
           />
         </Link>
@@ -50,8 +50,11 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
             <Link
               key={item.to}
               to={item.to}
-              className="text-[11px] tracking-[0.24em] uppercase text-white/80 hover:text-[var(--gold)] transition"
-              activeProps={{ className: "text-[var(--gold)]" }}
+              className="relative text-[13px] tracking-[0.16em] uppercase text-white/85 hover:text-[var(--gold-muted)] transition pb-1"
+              activeProps={{
+                className:
+                  "text-[var(--gold-muted)] after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-[var(--gold-muted)]",
+              }}
             >
               {item.label}
             </Link>
@@ -67,7 +70,7 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
           </button>
           <Link
             to="/become-a-distributor"
-            className="hidden md:inline-flex items-center border border-[var(--gold)] text-[var(--gold)] text-[11px] tracking-[0.24em] uppercase px-5 py-2.5 hover:bg-[var(--gold)] hover:text-[var(--ink)] transition"
+            className="hidden md:inline-flex items-center bg-[var(--gold-muted)] text-[#05091A] text-[13px] font-medium tracking-[0.14em] uppercase px-5 py-2.5 hover:brightness-110 hover:-translate-y-0.5 transition"
           >
             Become a Distributor
           </Link>
@@ -82,14 +85,14 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
       </div>
 
       {open && (
-        <div className="lg:hidden bg-[var(--ink)] border-t border-white/5">
+        <div className="lg:hidden bg-[#05091A] border-t border-white/10">
           <nav className="container-lux flex flex-col py-6 gap-1">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm tracking-[0.2em] uppercase text-white/80 hover:text-[var(--gold)]"
+                className="py-3 text-sm tracking-[0.16em] uppercase text-white/85 hover:text-[var(--gold-muted)]"
               >
                 {item.label}
               </Link>
@@ -97,7 +100,7 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
             <Link
               to="/become-a-distributor"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center border border-[var(--gold)] text-[var(--gold)] text-[11px] tracking-[0.24em] uppercase px-5 py-3"
+              className="mt-4 inline-flex items-center justify-center bg-[var(--gold-muted)] text-[#05091A] text-[13px] tracking-[0.14em] uppercase px-5 py-3"
             >
               Become a Distributor
             </Link>

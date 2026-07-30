@@ -26,7 +26,7 @@ export function WhatsAppFloat() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="md:hidden fixed bottom-5 right-4 z-40 h-13 w-13 h-[52px] w-[52px] rounded-full grid place-items-center bg-[#128C4B] shadow-[0_10px_30px_-8px_rgba(0,0,0,0.6)] transition"
+        className="md:hidden fixed bottom-5 right-4 z-40 h-[52px] w-[52px] rounded-full grid place-items-center bg-[#128C4B] shadow-[0_10px_30px_-8px_rgba(0,0,0,0.6)] transition"
       >
         <Icon className="h-6 w-6 fill-white" />
       </a>

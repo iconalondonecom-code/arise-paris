@@ -12,7 +12,7 @@ export function PageShell({
   transparentHeader?: boolean;
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--warm-white)]">
+    <div className="min-h-screen flex flex-col bg-[#05091A]">
       <TopBar />
       <Header transparentOverHero={transparentHeader} />
       <main className={transparentHeader ? "-mt-20 md:-mt-24" : ""}>{children}</main>
