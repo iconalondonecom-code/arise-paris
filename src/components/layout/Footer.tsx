@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Collection</h4>
+          <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Products</h4>
           <ul className="space-y-2.5 text-sm">
             {products.map((p) => (
               <li key={p.slug}>
@@ -75,7 +75,13 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[var(--gold)]" />
-              <span>Vadodara, Gujarat, India</span>
+              <address className="not-italic leading-relaxed">
+                {site.address.line1},<br />
+                {site.address.line2},<br />
+                {site.address.line3},<br />
+                {site.address.city},<br />
+                {site.address.country}
+              </address>
             </li>
           </ul>
 
