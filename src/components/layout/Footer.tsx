@@ -5,8 +5,8 @@ import { products } from "@/data/products";
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--ink)] text-white/70">
-      <div className="container-lux py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+    <footer className="bg-[#05091A] text-[var(--text-muted)] border-t border-white/10">
+      <div className="container-wide py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
         <div>
           <img
             src={site.logo}
@@ -96,7 +96,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-lux flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/50">
+        <div className="container-wide flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/50">
           <p>{site.copyright}</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-[var(--gold)]">Privacy Policy</Link>
