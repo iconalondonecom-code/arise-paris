@@ -5,8 +5,8 @@ import { products } from "@/data/products";
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--ink)] text-white/70">
-      <div className="container-lux py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+    <footer className="bg-[#05091A] text-[var(--text-muted)] border-t border-white/10">
+      <div className="container-wide py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
         <div>
           <img
             src={site.logo}
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Collection</h4>
+          <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Products</h4>
           <ul className="space-y-2.5 text-sm">
             {products.map((p) => (
               <li key={p.slug}>
@@ -75,7 +75,13 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[var(--gold)]" />
-              <span>Vadodara, Gujarat, India</span>
+              <address className="not-italic leading-relaxed">
+                {site.address.line1},<br />
+                {site.address.line2},<br />
+                {site.address.line3},<br />
+                {site.address.city},<br />
+                {site.address.country}
+              </address>
             </li>
           </ul>
 
@@ -96,7 +102,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-lux flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/50">
+        <div className="container-wide flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/50">
           <p>{site.copyright}</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-[var(--gold)]">Privacy Policy</Link>
