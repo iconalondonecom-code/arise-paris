@@ -116,7 +116,7 @@ export function HeroJourney() {
                 >
                   <span
                     aria-hidden
-                    className="absolute inset-x-0 bottom-4 mx-auto h-24 w-24 md:h-32 md:w-32 rounded-full blur-2xl"
+                    className="pointer-events-none absolute inset-x-0 bottom-4 mx-auto h-24 w-24 md:h-32 md:w-32 rounded-full blur-2xl"
                     style={{
                       background: c.glow,
                       opacity: isActive ? 0.55 : 0.18,
