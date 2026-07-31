@@ -4,7 +4,8 @@ import { getProduct, products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { site, waLink } from "@/data/site";
 import { AriseCrest } from "@/components/AriseCrest";
-import { Mail, MessageCircle, FileText, Share2 } from "lucide-react";
+import { MessageCircle, Share2 } from "lucide-react";
+import { AddToEnquiryButton } from "@/components/enquiry/AddToEnquiryButton";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -94,15 +95,13 @@ function ProductDetail() {
               </dl>
 
               <div className="mt-10 flex flex-wrap gap-3">
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-[var(--ink)] text-white px-6 py-3.5 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--gold)] hover:text-[var(--ink)] transition">
-                  <Mail className="h-4 w-4" /> Add to Enquiry
-                </Link>
+                <AddToEnquiryButton
+                  slug={product.slug}
+                  className="inline-flex items-center gap-2 bg-[var(--ink)] text-white px-6 py-3.5 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--gold)] hover:text-[var(--ink)] transition"
+                />
                 <a href={waLink(`Hello, I'm interested in Arise Paris ${product.name} for B2B distribution.`)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-[var(--ink)] text-[var(--ink)] px-6 py-3.5 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--ink)] hover:text-white transition">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
                 </a>
-                <Link to="/request-catalogue" className="inline-flex items-center gap-2 border border-[var(--border)] text-[var(--body)] px-6 py-3.5 text-[11px] tracking-[0.28em] uppercase hover:border-[var(--gold)] hover:text-[var(--gold)] transition">
-                  <FileText className="h-4 w-4" /> Catalogue
-                </Link>
                 <button className="inline-flex items-center gap-2 border border-[var(--border)] text-[var(--body)] px-6 py-3.5 text-[11px] tracking-[0.28em] uppercase hover:border-[var(--gold)] hover:text-[var(--gold)] transition" aria-label="Share">
                   <Share2 className="h-4 w-4" /> Share
                 </button>

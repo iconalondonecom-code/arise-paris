@@ -15,7 +15,7 @@ export const Route = createFileRoute("/privacy-policy")({
         <div className="container-lux max-w-3xl prose prose-neutral text-[var(--body)] leading-relaxed space-y-6">
           <p>This policy outlines how Arise Paris, a brand of Ronak Group, handles information you provide through this website.</p>
           <h2 className="text-2xl text-[var(--ink)]">Information We Collect</h2>
-          <p>We collect information you submit through enquiry, distributor and catalogue forms — including name, company, contact details and message content.</p>
+          <p>We collect information you submit through enquiry and distributor forms — including name, company, contact details and message content.</p>
           <h2 className="text-2xl text-[var(--ink)]">How We Use It</h2>
           <p>Information is used to respond to your enquiry and to discuss potential B2B partnerships. We do not sell your information.</p>
           <h2 className="text-2xl text-[var(--ink)]">Contact</h2>

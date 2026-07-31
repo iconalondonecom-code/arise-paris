@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Arise Paris | B2B Enquiries" },
-      { name: "description", content: "Contact Arise Paris for distributor, wholesale, import, catalogue and general enquiries — email, phone and WhatsApp." },
+      { name: "description", content: "Contact Arise Paris for distributor, wholesale, import and general enquiries — email, phone and WhatsApp." },
     ],
   }),
   component: ContactPage,
@@ -34,7 +34,7 @@ function ContactPage() {
         <div className="container-lux max-w-4xl">
           <span className="eyebrow">Contact</span>
           <h1 className="mt-4 text-5xl md:text-7xl leading-[1.02]">Speak with our team.</h1>
-          <p className="mt-6 text-white/70 text-lg max-w-2xl">Get in touch for distributor, wholesale, import, catalogue and general enquiries.</p>
+          <p className="mt-6 text-white/70 text-lg max-w-2xl">Get in touch for distributor, wholesale, import and general enquiries.</p>
         </div>
       </section>
 
@@ -105,7 +105,7 @@ function ContactPage() {
               <div>
                 <label className={label}>Enquiry Type</label>
                 <select className={field}>
-                  {["Distributor Enquiry", "Wholesale Enquiry", "Import Enquiry", "Product Information", "Catalogue Request", "General Enquiry"].map((o) => <option key={o}>{o}</option>)}
+                  {["Distributor Enquiry", "Wholesale Enquiry", "Import Enquiry", "Product Information", "General Enquiry"].map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
               <div className="md:col-span-2"><label className={label}>Product Interest</label><input className={field} /></div>

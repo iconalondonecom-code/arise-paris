@@ -276,10 +276,10 @@ function HomePage() {
               ))}
             </ul>
             <Link
-              to="/request-catalogue"
+              to="/products"
               className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-[14px] tracking-[0.16em] uppercase text-[#05091A] bg-[var(--gold-muted)] hover:brightness-110 transition"
             >
-              Request Product Catalogue <ArrowRight className="h-4 w-4" />
+              Explore the Collection <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -347,10 +347,10 @@ function HomePage() {
                 Become a Distributor
               </Link>
               <Link
-                to="/request-catalogue"
+                to="/contact"
                 className="inline-flex justify-center items-center px-6 py-3 text-[13px] tracking-[0.16em] uppercase border border-white/60 text-white hover:bg-white/10 transition"
               >
-                Request Catalogue
+                Contact Our Team
               </Link>
               <a
                 href={waLink()}
@@ -550,10 +550,10 @@ function HomePage() {
               Become a Distributor
             </Link>
             <Link
-              to="/request-catalogue"
+              to="/contact"
               className="inline-flex items-center px-6 py-3 text-[13px] tracking-[0.16em] uppercase border border-white/30 text-[var(--text-white)] hover:bg-white/10 transition"
             >
-              Request Catalogue
+              Contact Our Team
             </Link>
             <a
               href={waLink()}

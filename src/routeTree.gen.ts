@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as RequestCatalogueRouteImport } from './routes/request-catalogue'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BecomeADistributorRouteImport } from './routes/become-a-distributor'
@@ -25,11 +24,6 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RequestCatalogueRoute = RequestCatalogueRouteImport.update({
-  id: '/request-catalogue',
-  path: '/request-catalogue',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -90,7 +84,6 @@ export interface FileRoutesByFullPath {
   '/become-a-distributor': typeof BecomeADistributorRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/request-catalogue': typeof RequestCatalogueRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -104,7 +97,6 @@ export interface FileRoutesByTo {
   '/become-a-distributor': typeof BecomeADistributorRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/request-catalogue': typeof RequestCatalogueRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -119,7 +111,6 @@ export interface FileRoutesById {
   '/become-a-distributor': typeof BecomeADistributorRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/request-catalogue': typeof RequestCatalogueRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -135,7 +126,6 @@ export interface FileRouteTypes {
     | '/become-a-distributor'
     | '/contact'
     | '/privacy-policy'
-    | '/request-catalogue'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -149,7 +139,6 @@ export interface FileRouteTypes {
     | '/become-a-distributor'
     | '/contact'
     | '/privacy-policy'
-    | '/request-catalogue'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -163,7 +152,6 @@ export interface FileRouteTypes {
     | '/become-a-distributor'
     | '/contact'
     | '/privacy-policy'
-    | '/request-catalogue'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -178,7 +166,6 @@ export interface RootRouteChildren {
   BecomeADistributorRoute: typeof BecomeADistributorRoute
   ContactRoute: typeof ContactRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  RequestCatalogueRoute: typeof RequestCatalogueRoute
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
@@ -193,13 +180,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/request-catalogue': {
-      id: '/request-catalogue'
-      path: '/request-catalogue'
-      fullPath: '/request-catalogue'
-      preLoaderRoute: typeof RequestCatalogueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -282,7 +262,6 @@ const rootRouteChildren: RootRouteChildren = {
   BecomeADistributorRoute: BecomeADistributorRoute,
   ContactRoute: ContactRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  RequestCatalogueRoute: RequestCatalogueRoute,
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductsSlugRoute: ProductsSlugRoute,

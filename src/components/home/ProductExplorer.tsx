@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight, MessageCircle, ArrowRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageCircle, ArrowRight } from "lucide-react";
+import { AddToEnquiryButton } from "@/components/enquiry/AddToEnquiryButton";
 import { products } from "@/data/products";
 import { colourOf, heroOrder } from "@/data/colours";
 import { waLink } from "@/data/site";
@@ -87,12 +88,10 @@ export function ProductExplorer() {
               >
                 View Product <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/become-a-distributor"
+              <AddToEnquiryButton
+                slug={active.slug}
                 className="inline-flex items-center gap-2 px-5 py-3 text-[13px] tracking-[0.16em] uppercase text-[var(--text-white)] border border-white/30 hover:bg-white/10 transition"
-              >
-                <Plus className="h-4 w-4" /> Add to Enquiry
-              </Link>
+              />
               <a
                 href={waLink(
                   `Hello, I am interested in Arise Paris ${active.name} (250 ml deodorant body spray) for B2B distribution.`,

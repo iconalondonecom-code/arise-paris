@@ -13,7 +13,7 @@ export function EnquiryCTA() {
           Interested in distributing Arise Paris?
         </h2>
         <p className="mt-6 text-white/70 text-lg leading-relaxed">
-          Connect with our team to receive product information, discuss regional opportunities or request the Arise Paris catalogue.
+          Connect with our team to receive product information or discuss regional distribution opportunities.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link to="/become-a-distributor" className="bg-[var(--gold)] text-[var(--ink)] px-8 py-4 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--warm-white)] transition">
