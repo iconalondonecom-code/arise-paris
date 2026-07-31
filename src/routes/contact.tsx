@@ -105,7 +105,7 @@ function ContactPage() {
               <div>
                 <label className={label}>Enquiry Type</label>
                 <select className={field}>
-                  {["Distributor Enquiry", "Wholesale Enquiry", "Import Enquiry", "Product Information", "Catalogue Request", "General Enquiry"].map((o) => <option key={o}>{o}</option>)}
+                  {["Distributor Enquiry", "Wholesale Enquiry", "Import Enquiry", "Product Information", "General Enquiry"].map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
               <div className="md:col-span-2"><label className={label}>Product Interest</label><input className={field} /></div>
