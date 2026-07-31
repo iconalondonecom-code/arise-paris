@@ -37,12 +37,7 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
     >
       <div className="container-wide flex items-center justify-between h-[72px] md:h-20">
         <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Arise Paris home">
-          <img
-            src={site.logo}
-            alt="Arise Paris"
-            className="h-11 md:h-14 w-auto"
-            style={{ filter: "invert(1) brightness(2)" }}
-          />
+          <img src={site.logo} alt="Arise Paris" className="h-14 md:h-20 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

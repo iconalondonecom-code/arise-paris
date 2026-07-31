@@ -1,5 +1,5 @@
-import ariseLogoAsset from "@/assets/arise-logo.asset.json";
-import ronakLogoAsset from "@/assets/ronak-logo.asset.json";
+import ariseLogoAsset from "@/assets/arise-paris.asset.json";
+import ronakLogoAsset from "@/assets/ronak-group.asset.json";
 
 export const site = {
   brand: "Arise Paris",

@@ -436,7 +436,7 @@ function HomePage() {
             <img
               src={site.ronakLogo}
               alt="Ronak Group"
-              className="h-14 w-auto"
+              className="h-20 w-auto"
               loading="lazy"
             />
           </span>
