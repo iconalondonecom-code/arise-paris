@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Explore eleven distinctive 250 ml deodorant body sprays created for modern retail and international B2B partnerships.",
+          "Eleven distinctive 250 ml Arise Paris deodorant body sprays for modern retail, wholesale, import and international distribution partnerships.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

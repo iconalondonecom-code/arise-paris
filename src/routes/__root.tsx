@@ -78,12 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Arise Paris Body Sprays | B2B Distribution & Wholesale" },
-      { name: "description", content: "Explore Arise Paris 250 ml deodorant body sprays and connect with our team for wholesale, import and distributor opportunities." },
+      { name: "description", content: "Eleven distinctive 250 ml Arise Paris deodorant body sprays for modern retail, wholesale, import and international distribution partnerships." },
       { name: "author", content: "Arise Paris — A Ronak Group Brand" },
       { property: "og:title", content: "Arise Paris Body Sprays | B2B Distribution & Wholesale" },
-      { property: "og:description", content: "Explore Arise Paris 250 ml deodorant body sprays and connect with our team for wholesale, import and distributor opportunities." },
+      { property: "og:description", content: "Eleven distinctive 250 ml Arise Paris deodorant body sprays for modern retail, wholesale, import and international distribution partnerships." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Arise Paris Body Sprays | B2B Distribution & Wholesale" },
+      { name: "twitter:description", content: "Eleven distinctive 250 ml Arise Paris deodorant body sprays for modern retail, wholesale, import and international distribution partnerships." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/37386636-eb3b-424f-8c56-928ecc0afc0e" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/37386636-eb3b-424f-8c56-928ecc0afc0e" },
     ],
     links: [
       {
