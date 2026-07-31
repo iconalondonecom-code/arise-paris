@@ -62,7 +62,9 @@ function AboutPage() {
 
       <section className="py-24 bg-[var(--warm-white)]">
         <div className="container-lux max-w-4xl text-center">
-          <img src={site.ronakLogo} alt="Ronak Group" className="h-20 mx-auto" />
+          <span className="inline-grid place-items-center rounded-xl bg-[#0B0B0F] px-8 py-6">
+            <img src={site.ronakLogo} alt="Ronak Group" className="h-24 w-auto" />
+          </span>
           <p className="mt-6 text-[var(--body)] leading-relaxed text-lg">
             "Arise Paris is a brand of Ronak Group." The parent group provides a strong foundation for professional B2B communication and long-term distribution partnerships.
           </p>

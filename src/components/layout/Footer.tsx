@@ -8,12 +8,7 @@ export function Footer() {
     <footer className="bg-[#05091A] text-[var(--text-muted)] border-t border-white/10">
       <div className="container-wide py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
         <div>
-          <img
-            src={site.logo}
-            alt="Arise Paris"
-            className="h-16 w-auto mb-6"
-            style={{ filter: "invert(1) brightness(2)" }}
-          />
+          <img src={site.logo} alt="Arise Paris" className="h-24 w-auto mb-6" />
           <p className="text-sm leading-relaxed">
             Arise Paris is a contemporary body fragrance brand offering a distinctive collection of 250 ml deodorant body sprays for international B2B customers.
           </p>
@@ -87,12 +82,7 @@ export function Footer() {
 
           <div className="mt-8 pt-6 border-t border-white/10">
             <a href={site.ronakUrl} target="_blank" rel="noreferrer" className="inline-block">
-              <img
-                src={site.ronakLogo}
-                alt="Ronak Group"
-                className="h-10 w-auto"
-                style={{ filter: "invert(1) brightness(2)" }}
-              />
+              <img src={site.ronakLogo} alt="Ronak Group" className="h-16 w-auto" />
             </a>
             <p className="text-xs mt-3 tracking-wider text-white/60">
               Arise Paris is a brand of Ronak Group.

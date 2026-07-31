@@ -21,7 +21,7 @@ export function HeroJourney() {
       {...keyHandlers}
       {...hoverHandlers}
       {...swipeHandlers}
-      className="relative overflow-hidden outline-none min-h-[640px] md:min-h-[720px] lg:min-h-[860px] flex flex-col justify-center pt-24 pb-14 md:pb-20"
+      className="relative overflow-x-clip outline-none min-h-[700px] md:min-h-[820px] lg:min-h-[940px] flex flex-col justify-center pt-24 pb-14 md:pb-20"
       style={{
         background: journeyBackground(active.slug),
         transition: "background 600ms ease",
@@ -78,7 +78,7 @@ export function HeroJourney() {
             type="button"
             onClick={prev}
             aria-label="Previous product"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-11 w-11 grid place-items-center rounded-full border border-white/20 bg-black/30 text-white hover:bg-black/60 transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 h-11 w-11 grid place-items-center rounded-full border border-white/20 bg-black/30 text-white hover:bg-black/60 transition"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -86,12 +86,12 @@ export function HeroJourney() {
             type="button"
             onClick={next}
             aria-label="Next product"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-11 w-11 grid place-items-center rounded-full border border-white/20 bg-black/30 text-white hover:bg-black/60 transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 h-11 w-11 grid place-items-center rounded-full border border-white/20 bg-black/30 text-white hover:bg-black/60 transition"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
 
-          <div className="flex items-end justify-center gap-1 sm:gap-2 md:gap-3 px-12 overflow-hidden">
+          <div className="hero-stage flex items-end justify-center gap-1 sm:gap-2 md:gap-3 px-12 pt-16 md:pt-20 pb-10 md:pb-12">
             {lineup.map((p, i) => {
               const isActive = i === index;
               const dist = Math.abs(i - index);
@@ -103,17 +103,20 @@ export function HeroJourney() {
                   onClick={() => setIndex(i)}
                   aria-label={`Select ${p.name}`}
                   aria-current={isActive}
-                  className={`relative shrink-0 group ${dist > 2 ? "hidden sm:block" : ""}`}
+                  className={`relative shrink-0 group hero-bottle ${isActive ? "is-active" : ""} ${dist > 2 ? "hidden sm:block" : ""}`}
                   style={{
-                    transform: `scale(${isActive ? 1.16 : 0.9 - Math.min(dist, 4) * 0.02}) translateY(${isActive ? "-10px" : "0"})`,
-                    zIndex: isActive ? 10 : 5 - Math.min(dist, 4),
+                    transform: isActive
+                      ? "scale(var(--sel-scale))"
+                      : `scale(${0.9 - Math.min(dist, 4) * 0.02})`,
+                    transformOrigin: "center bottom",
+                    zIndex: isActive ? 20 : 5 - Math.min(dist, 4),
                     transition: "transform 600ms cubic-bezier(.22,.8,.28,1), filter 600ms ease",
                     filter: isActive ? "none" : "brightness(0.78) saturate(0.9)",
                   }}
                 >
                   <span
                     aria-hidden
-                    className="absolute inset-x-0 bottom-4 mx-auto h-24 w-24 md:h-32 md:w-32 rounded-full blur-2xl"
+                    className="pointer-events-none absolute inset-x-0 bottom-4 mx-auto h-24 w-24 md:h-32 md:w-32 rounded-full blur-2xl"
                     style={{
                       background: c.glow,
                       opacity: isActive ? 0.55 : 0.18,
@@ -125,7 +128,7 @@ export function HeroJourney() {
                       src={p.image}
                       alt={p.imageAlt}
                       loading={isActive ? "eager" : "lazy"}
-                      className="relative h-[190px] sm:h-[230px] md:h-[300px] lg:h-[360px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.55)]"
+                      className="relative h-[190px] sm:h-[230px] md:h-[300px] lg:h-[360px] w-auto object-contain object-bottom drop-shadow-[0_24px_40px_rgba(0,0,0,0.55)]"
                     />
                   )}
                   {/* reflection */}
@@ -134,7 +137,7 @@ export function HeroJourney() {
                       aria-hidden
                       src={p.image}
                       alt=""
-                      className="relative -mt-2 h-[46px] md:h-[70px] w-auto object-contain opacity-20 scale-y-[-1]"
+                      className="relative -mt-2 h-[46px] md:h-[70px] w-auto object-contain object-bottom opacity-20 scale-y-[-1]"
                       style={{
                         maskImage: "linear-gradient(to top, transparent 10%, black 100%)",
                         WebkitMaskImage: "linear-gradient(to top, transparent 10%, black 100%)",
