@@ -30,7 +30,6 @@ export function Footer() {
               { to: "/products", l: "Products" },
               { to: "/b2b-partnership", l: "B2B Partnership" },
               { to: "/become-a-distributor", l: "Become a Distributor" },
-              { to: "/request-catalogue", l: "Request Catalogue" },
               { to: "/blog", l: "Blog" },
               { to: "/contact", l: "Contact" },
             ].map((i) => (
