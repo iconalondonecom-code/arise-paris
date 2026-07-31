@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { AriseCrest } from "./AriseCrest";
 import type { Product } from "@/data/products";
+import { AddToEnquiryButton } from "./enquiry/AddToEnquiryButton";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
@@ -43,12 +44,10 @@ export function ProductCard({ product }: { product: Product }) {
           >
             View Details
           </Link>
-          <Link
-            to="/contact"
-            className="ml-auto text-[11px] tracking-[0.24em] uppercase text-[var(--body)] hover:text-[var(--ink)] transition"
-          >
-            Enquire →
-          </Link>
+          <AddToEnquiryButton
+            slug={product.slug}
+            className="ml-auto inline-flex items-center gap-1.5 text-[11px] tracking-[0.24em] uppercase text-[var(--body)] hover:text-[var(--ink)] transition"
+          />
         </div>
       </div>
     </div>
