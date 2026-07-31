@@ -208,3 +208,19 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Hero product colour journey stage */
+.hero-stage {
+  --sel-scale: 1.08;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .hero-stage {
+    --sel-scale: 1.12;
+  }
+}
+
+.hero-bottle {
+  transform-origin: center bottom;
+}
