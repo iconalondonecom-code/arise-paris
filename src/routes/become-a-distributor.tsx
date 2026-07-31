@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { products } from "@/data/products";
 import { successToast } from "@/lib/toast";
+import { useEnquiry } from "@/lib/enquiry";
 
 export const Route = createFileRoute("/become-a-distributor")({
   head: () => ({
@@ -19,8 +20,21 @@ export const Route = createFileRoute("/become-a-distributor")({
 const businessTypes = ["Importer", "Distributor", "Wholesaler", "Retail Chain", "Supermarket", "Fragrance Store", "E-commerce Retailer", "Trading Company", "Other"];
 
 function DistributorPage() {
+  return (
+    <PageShell>
+      <DistributorContent />
+    </PageShell>
+  );
+}
+
+function DistributorContent() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const { items, clear } = useEnquiry();
+
+  useEffect(() => {
+    if (items.length) setSelectedProducts((prev) => Array.from(new Set([...prev, ...items])));
+  }, [items]);
 
   const toggle = (slug: string) =>
     setSelectedProducts((prev) => (prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]));
@@ -33,13 +47,14 @@ function DistributorPage() {
     successToast("Thank you. Our team will be in touch shortly.");
     (e.target as HTMLFormElement).reset();
     setSelectedProducts([]);
+    clear();
   };
 
   const field = "w-full h-12 px-4 bg-[var(--warm-white)] border border-[var(--border)] text-sm focus:outline-none focus:border-[var(--gold)] transition";
   const label = "text-[10px] tracking-[0.24em] uppercase text-[var(--body)] mb-2 block";
 
   return (
-    <PageShell>
+    <>
       <section className="bg-[var(--ink)] text-white py-24 md:py-32">
         <div className="container-lux max-w-4xl">
           <span className="eyebrow">Distributor Application</span>
@@ -79,6 +94,11 @@ function DistributorPage() {
 
             <div>
               <label className={label}>Products of Interest</label>
+              {items.length > 0 && (
+                <p className="mb-3 text-xs text-[var(--body)]">
+                  Products from your enquiry list are pre-selected below.
+                </p>
+              )}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {products.map((p) => (
                   <label key={p.slug} className={`flex items-center gap-2 border p-3 text-sm cursor-pointer transition ${selectedProducts.includes(p.slug) ? "border-[var(--gold)] bg-[var(--ivory)]" : "border-[var(--border)]"}`}>
@@ -106,6 +126,6 @@ function DistributorPage() {
           </form>
         </div>
       </section>
-    </PageShell>
+    </>
   );
 }
