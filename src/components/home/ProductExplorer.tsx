@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight, MessageCircle, ArrowRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageCircle, ArrowRight } from "lucide-react";
+import { AddToEnquiryButton } from "@/components/enquiry/AddToEnquiryButton";
 import { products } from "@/data/products";
 import { colourOf, heroOrder } from "@/data/colours";
 import { waLink } from "@/data/site";
