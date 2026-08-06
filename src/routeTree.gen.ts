@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as RequestCatalogueRouteImport } from './routes/request-catalogue'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -28,6 +29,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapRoute = SitemapRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/request-catalogue': typeof RequestCatalogueRoute
   '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/request-catalogue': typeof RequestCatalogueRoute
   '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/request-catalogue': typeof RequestCatalogueRoute
   '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/request-catalogue'
     | '/sitemap'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/request-catalogue'
     | '/sitemap'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/request-catalogue'
     | '/sitemap'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/products/$slug'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RequestCatalogueRoute: typeof RequestCatalogueRoute
   SitemapRoute: typeof SitemapRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap': {
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RequestCatalogueRoute: RequestCatalogueRoute,
   SitemapRoute: SitemapRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductsSlugRoute: ProductsSlugRoute,
