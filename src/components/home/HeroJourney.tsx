@@ -64,10 +64,10 @@ export function HeroJourney() {
               Discover All Variants <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/become-a-distributor"
+              to="/request-catalogue"
               className="inline-flex items-center gap-2 px-6 py-3 text-[14px] tracking-[0.14em] uppercase font-medium text-[var(--text-white)] border border-white/35 bg-white/5 hover:bg-white/10 transition"
             >
-              Become a Distributor
+              Request Catalogue
             </Link>
           </div>
         </div>

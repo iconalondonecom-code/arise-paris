@@ -1,37 +1,32 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { site } from "@/data/site";
 import { products } from "@/data/products";
 
 export function Footer() {
   return (
     <footer className="bg-[#05091A] text-[var(--text-muted)] border-t border-white/10">
-      <div className="container-wide py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      <div className="container-wide py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-14">
         <div>
-          <img src={site.logo} alt="Arise Paris" className="h-24 w-auto mb-6" />
-          <p className="text-sm leading-relaxed">
+          <img src={site.logo} alt="Arise Paris" className="h-28 md:h-32 w-auto mb-7" />
+          <p className="text-[15px] leading-[1.8]">
             Arise Paris is a contemporary body fragrance brand offering a distinctive collection of 250 ml deodorant body sprays for international B2B customers.
           </p>
-          <div className="flex gap-3 mt-6">
-            {[Instagram, Facebook, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="h-9 w-9 border border-white/15 grid place-items-center hover:border-[var(--gold)] hover:text-[var(--gold)] transition">
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>
           <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Quick Links</h4>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3.5 text-[15px] leading-relaxed">
             {[
               { to: "/", l: "Home" },
               { to: "/about", l: "About" },
               { to: "/products", l: "Products" },
               { to: "/b2b-partnership", l: "B2B Partnership" },
               { to: "/become-a-distributor", l: "Become a Distributor" },
+              { to: "/request-catalogue", l: "Request Catalogue" },
               { to: "/blog", l: "Blog" },
               { to: "/contact", l: "Contact" },
+              { to: "/sitemap", l: "Sitemap" },
             ].map((i) => (
               <li key={i.to}>
                 <Link to={i.to} className="hover:text-[var(--gold)] transition">{i.l}</Link>
@@ -42,7 +37,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Products</h4>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-3 text-[15px] leading-relaxed">
             {products.map((p) => (
               <li key={p.slug}>
                 <Link to="/products/$slug" params={{ slug: p.slug }} className="hover:text-[var(--gold)] transition">
@@ -55,7 +50,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Contact</h4>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-4 text-[15px] leading-relaxed">
             <li className="flex items-start gap-2">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-[var(--gold)]" />
               <a href={`mailto:${site.email}`} className="hover:text-[var(--gold)] transition">{site.email}</a>
@@ -96,6 +91,7 @@ export function Footer() {
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-[var(--gold)]">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-[var(--gold)]">Terms</Link>
+            <Link to="/sitemap" className="hover:text-[var(--gold)]">Sitemap</Link>
           </div>
         </div>
       </div>
