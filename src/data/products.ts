@@ -10,7 +10,7 @@ import signature from "@/assets/signature.asset.json";
 import sweetLove from "@/assets/sweet-love.asset.json";
 import temptation from "@/assets/temptation.asset.json";
 
-export type CollectionGroup = "bold-dynamic" | "deep-rich" | "soft-expressive";
+export type CollectionGroup = "bold-dynamic" | "deep-rich" | "soft-expressive" | "fresh-refined";
 
 export interface Product {
   name: string;
@@ -46,6 +46,11 @@ export const collections: Record<CollectionGroup, { title: string; description: 
     title: "Soft & Expressive",
     description:
       "Fresh, graceful and expressive variants designed for diverse fragrance preferences.",
+  },
+  "fresh-refined": {
+    title: "Fresh & Refined",
+    description:
+      "Clean, refreshing visual identities suited to versatile everyday and retail positioning.",
   },
 };
 
@@ -184,7 +189,7 @@ export const products: Product[] = [
     accent: "#4F7A3B",
     accentSoft: "#EAF1E4",
     gradient: "linear-gradient(160deg, #B7CFA1 0%, #4F7A3B 100%)",
-    collection: "soft-expressive",
+    collection: "fresh-refined",
     visualIdentity: "Green, botanical — fresh and nature-inspired",
     seoTitle: "Forest Spice Deodorant Body Spray | Arise Paris",
     metaDescription:
@@ -253,7 +258,7 @@ export const products: Product[] = [
     accent: "#5F7A94",
     accentSoft: "#EAEEF3",
     gradient: "linear-gradient(160deg, #B9BDC5 0%, #5F7A94 100%)",
-    collection: "bold-dynamic",
+    collection: "fresh-refined",
     visualIdentity: "Silver, light blue — clean and refined",
     seoTitle: "Signature Deodorant Body Spray | Arise Paris",
     metaDescription:

@@ -1,0 +1,19 @@
+/*
+Theme Name: Arise Paris
+Theme URI: https://ronak.global/
+Author: Ronak Group
+Author URI: https://ronak.global/
+Description: A native WordPress theme for Arise Paris, a B2B deodorant body spray brand by Ronak Group. Ships a full Product Colour Journey hero, interactive product explorer, enquiry list, native secure forms and complete B2B content templates.
+Version: 1.0.0
+Requires at least: 6.5
+Requires PHP: 8.1
+Tested up to: 6.6
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: arise-paris
+Tags: e-commerce-partial, custom-colors, custom-menu, custom-logo, editor-style, featured-images, threaded-comments, translation-ready
+
+Arise Paris WordPress theme, styles.css only carries the theme header per WordPress
+requirements. All presentational rules live in assets/css/main.css and
+assets/css/responsive.css, enqueued via inc/enqueue.php.
+*/

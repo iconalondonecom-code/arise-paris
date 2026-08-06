@@ -75,11 +75,18 @@ export function EnquiryList() {
 
                 <div className="mt-8 flex flex-col gap-3">
                   <Link
-                    to="/become-a-distributor"
+                    to="/enquiry-list"
                     onClick={() => setOpen(false)}
                     className="inline-flex justify-center items-center px-6 py-3 text-[13px] tracking-[0.16em] uppercase bg-[var(--gold-muted)] text-[#05091A] hover:brightness-110 transition"
                   >
-                    Enquire About These Products
+                    Complete Formal Enquiry
+                  </Link>
+                  <Link
+                    to="/become-a-distributor"
+                    onClick={() => setOpen(false)}
+                    className="inline-flex justify-center items-center px-6 py-3 text-[13px] tracking-[0.16em] uppercase border border-white/30 text-[var(--text-white)] hover:bg-white/10 transition"
+                  >
+                    Enquire About Distribution
                   </Link>
                   <a
                     href={waLink(message)}
@@ -89,13 +96,22 @@ export function EnquiryList() {
                   >
                     <MessageCircle className="h-4 w-4" /> WhatsApp Enquiry
                   </a>
-                  <button
-                    type="button"
-                    onClick={clear}
-                    className="text-[12px] tracking-[0.16em] uppercase text-white/50 hover:text-white"
-                  >
-                    Clear list
-                  </button>
+                  <div className="flex items-center justify-between mt-2">
+                    <button
+                      type="button"
+                      onClick={clear}
+                      className="text-[12px] tracking-[0.16em] uppercase text-white/50 hover:text-white"
+                    >
+                      Clear list
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setOpen(false)}
+                      className="text-[12px] tracking-[0.16em] uppercase text-white/50 hover:text-white"
+                    >
+                      Continue Browsing
+                    </button>
+                  </div>
                 </div>
               </>
             )}
