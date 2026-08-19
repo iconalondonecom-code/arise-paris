@@ -54,7 +54,7 @@
   --color-silver: var(--silver);
   --color-body: var(--body);
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
