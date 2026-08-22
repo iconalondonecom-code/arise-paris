@@ -46,7 +46,7 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
             <Link
               key={item.to}
               to={item.to}
-              className="relative text-[13px] tracking-[0.16em] uppercase text-white/85 hover:text-[var(--gold-muted)] transition pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-4"
+              className="relative nav-link text-white/85 hover:text-[var(--gold-muted)] transition pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-4"
               activeProps={{
                 className:
                   "text-[var(--gold-muted)] after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-[var(--gold-muted)]",
