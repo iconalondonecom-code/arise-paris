@@ -46,7 +46,7 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
             <Link
               key={item.to}
               to={item.to}
-              className="relative text-[13px] tracking-[0.16em] uppercase text-white/85 hover:text-[var(--gold-muted)] transition pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-4"
+              className="relative nav-link text-white/85 hover:text-[var(--gold-muted)] transition pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-4"
               activeProps={{
                 className:
                   "text-[var(--gold-muted)] after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-[var(--gold-muted)]",
@@ -57,26 +57,34 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 md:gap-4">
+        <div className="flex items-center gap-2 md:gap-3">
           <button
             type="button"
             aria-label={`Open enquiry list (${items.length} products)`}
             onClick={() => setEnquiryOpen(true)}
-            className="relative inline-flex text-white/80 hover:text-[var(--gold-muted)] transition p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-2"
+            className="relative inline-flex items-center gap-2 border border-white/25 text-white/90 hover:text-[var(--gold-muted)] hover:border-[var(--gold-muted)] transition px-2.5 py-2 md:px-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-2"
           >
-            <ClipboardList className="h-5 w-5" />
+            <ClipboardList className="h-[18px] w-[18px]" />
+            <span className="hidden md:inline nav-link">Enquiry List ({items.length})</span>
             {items.length > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 grid h-4 w-4 place-items-center rounded-full bg-[var(--gold-muted)] text-[9px] font-semibold text-[#05091A]">
+              <span className="md:hidden absolute -top-1 -right-1 grid h-4 w-4 place-items-center rounded-full bg-[var(--gold-muted)] text-[9px] font-semibold text-[#05091A]">
                 {items.length}
               </span>
             )}
           </button>
           <Link
+            to="/request-catalogue"
+            className="hidden md:inline-flex items-center bg-[var(--gold-muted)] text-[#05091A] btn-label px-5 py-3 hover:brightness-110 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+          >
+            Request Catalogue
+          </Link>
+          <Link
             to="/become-a-distributor"
-            className="hidden md:inline-flex items-center bg-[var(--gold-muted)] text-[#05091A] text-[13px] font-medium tracking-[0.14em] uppercase px-5 py-2.5 hover:brightness-110 hover:-translate-y-0.5 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+            className="hidden xl:inline-flex items-center border border-white/30 text-white btn-label px-5 py-3 hover:border-[var(--gold-muted)] hover:text-[var(--gold-muted)] transition"
           >
             Become a Distributor
           </Link>
+
           <button
             className="lg:hidden text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)]"
             aria-label={open ? "Close menu" : "Open menu"}

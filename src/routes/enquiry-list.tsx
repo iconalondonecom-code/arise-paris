@@ -18,6 +18,14 @@ export const Route = createFileRoute("/enquiry-list")({
 });
 
 function EnquiryListPage() {
+  return (
+    <PageShell>
+      <EnquiryListContent />
+    </PageShell>
+  );
+}
+
+function EnquiryListContent() {
   const { items, remove, clear } = useEnquiry();
   const selected = items.map((slug) => products.find((p) => p.slug === slug)).filter(Boolean) as typeof products;
 
@@ -26,7 +34,8 @@ function EnquiryListPage() {
     : undefined;
 
   return (
-    <PageShell>
+    <>
+
       <section className="bg-[var(--ink)] text-white py-20 md:py-28">
         <div className="container-lux max-w-3xl">
           <span className="eyebrow">Enquiry List</span>
@@ -120,6 +129,7 @@ function EnquiryListPage() {
           )}
         </div>
       </section>
-    </PageShell>
+    </>
+
   );
 }
