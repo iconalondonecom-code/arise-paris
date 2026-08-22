@@ -129,6 +129,7 @@ function EnquiryListContent() {
           )}
         </div>
       </section>
-    </PageShell>
+    </>
+
   );
 }
