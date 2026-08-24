@@ -1,0 +1,60 @@
+/* Arise Paris — responsive layer (tablet + mobile) */
+
+@media (max-width: 1200px) {
+	.products-grid { grid-template-columns: repeat(2, 1fr); }
+	.products-grid--related { grid-template-columns: repeat(2, 1fr); }
+	.collections-grid { grid-template-columns: repeat(2, 1fr); }
+	.footer-columns { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+	.blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+	.container, .content-area, .footer-legal__inner, .breadcrumbs { padding-left: 24px; padding-right: 24px; }
+	.nav-toggle { display: flex; }
+	.primary-nav {
+		display: none; position: absolute; left: 0; right: 0; top: 100%;
+		background: var(--navy); border-top: 1px solid var(--line-dark); padding: 24px; z-index: 60;
+	}
+	.primary-nav.is-open { display: block; }
+	.primary-nav__list, .menu-fallback { flex-direction: column; align-items: flex-start; gap: 18px; }
+	.site-nav__inner { min-height: 88px; flex-wrap: wrap; position: relative; }
+	.site-nav__actions { order: 3; margin-left: auto; }
+	.site-logo img { height: 60px; }
+	.product-explorer__stage { grid-template-columns: 1fr; gap: 32px; }
+	.product-explorer__focus { min-height: 360px; }
+	.product-single__inner { grid-template-columns: 1fr; gap: 40px; }
+	.content-area--split { grid-template-columns: 1fr; gap: 40px; }
+	.b2b-process__list, .about-chapters__list { grid-template-columns: 1fr 1fr; }
+	.sitemap-grid { grid-template-columns: 1fr 1fr; }
+	.colour-journey__bottle img { height: clamp(180px, 26vw, 300px); }
+}
+
+@media (max-width: 782px) {
+	body { font-size: 16px; }
+	.home-intro, .home-collections, .home-blog, .content-area, .b2b-process, .b2b-partners,
+	.about-chapters, .related-products, .product-explorer, .retail-shelf, .cta-band, .page-hero { padding-top: 64px; padding-bottom: 64px; }
+	.colour-journey { padding: 56px 0 48px; }
+	.colour-journey__heading { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+	.colour-journey__stage { padding: 40px 0 28px; }
+	.colour-journey__bottles { gap: 0; }
+	.colour-journey__bottle img { height: 190px; }
+	.colour-journey__bottle.is-active { transform: scale(1.08); }
+	.colour-journey__nav { width: 40px; height: 40px; }
+	.products-grid, .products-grid--related, .collections-grid, .blog-grid,
+	.b2b-process__list, .about-chapters__list, .sitemap-grid, .footer-columns { grid-template-columns: 1fr; }
+	.product-card__media img { height: 280px; }
+	.arise-form { padding: 28px; }
+	.product-single__media { padding: 28px; }
+	.footer-legal__inner { justify-content: center; text-align: center; }
+	.enquiry-list-toggle { padding: 10px 12px; }
+	.whatsapp-float { right: 16px; bottom: 16px; }
+	.products-filters__search input { max-width: none; }
+	.products-filters__meta { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+	.btn { width: 100%; }
+	.btn-small, .products-filters__search .btn { width: auto; }
+	.colour-journey__actions .btn { width: 100%; }
+	.ronak-association__inner { text-align: center; justify-content: center; }
+}
