@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "10e1bad6-abbd-4a54-8213-ee5ccc31191d",
-  "project_id": "296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2",
-  "url": "/__l5e/assets-v1/10e1bad6-abbd-4a54-8213-ee5ccc31191d/romantic.png",
-  "r2_key": "a/v1/296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2/10e1bad6-abbd-4a54-8213-ee5ccc31191d/romantic.png",
-  "original_filename": "romantic.png",
-  "size": 1096961,
   "content_type": "image/png",
-  "created_at": "2026-07-21T11:41:33Z"
+  "created_at": "2026-07-21T11:41:33Z",
+  "original_filename": "romantic.png",
+  "project_id": "6ea63cef-9059-483a-bc91-6b9bc030291a",
+  "r2_key": "a/v1/6ea63cef-9059-483a-bc91-6b9bc030291a/10e1bad6-abbd-4a54-8213-ee5ccc31191d/romantic.png",
+  "size": 1096961,
+  "url": "/__l5e/assets-v1/10e1bad6-abbd-4a54-8213-ee5ccc31191d/romantic.png",
+  "version": 1
 }

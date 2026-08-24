@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "c3445eb4-fc02-410c-a600-ec6a2404f237",
-  "project_id": "296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2",
-  "url": "/__l5e/assets-v1/c3445eb4-fc02-410c-a600-ec6a2404f237/goodness-oud.png",
-  "r2_key": "a/v1/296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2/c3445eb4-fc02-410c-a600-ec6a2404f237/goodness-oud.png",
-  "original_filename": "goodness-oud.png",
-  "size": 1314819,
   "content_type": "image/png",
-  "created_at": "2026-07-21T11:41:29Z"
+  "created_at": "2026-07-21T11:41:29Z",
+  "original_filename": "goodness-oud.png",
+  "project_id": "6ea63cef-9059-483a-bc91-6b9bc030291a",
+  "r2_key": "a/v1/6ea63cef-9059-483a-bc91-6b9bc030291a/c3445eb4-fc02-410c-a600-ec6a2404f237/goodness-oud.png",
+  "size": 1314819,
+  "url": "/__l5e/assets-v1/c3445eb4-fc02-410c-a600-ec6a2404f237/goodness-oud.png",
+  "version": 1
 }

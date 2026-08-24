@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "98aa9349-1567-4663-b5cd-ba560d7c5329",
-  "project_id": "296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2",
-  "url": "/__l5e/assets-v1/98aa9349-1567-4663-b5cd-ba560d7c5329/ronak-logo.png",
-  "r2_key": "a/v1/296c3ea1-f005-44bd-ad1a-00a5ab9c7cc2/98aa9349-1567-4663-b5cd-ba560d7c5329/ronak-logo.png",
-  "original_filename": "ronak-logo.png",
-  "size": 140822,
   "content_type": "image/png",
-  "created_at": "2026-07-21T11:41:05Z"
+  "created_at": "2026-07-21T11:41:05Z",
+  "original_filename": "ronak-logo.png",
+  "project_id": "6ea63cef-9059-483a-bc91-6b9bc030291a",
+  "r2_key": "a/v1/6ea63cef-9059-483a-bc91-6b9bc030291a/98aa9349-1567-4663-b5cd-ba560d7c5329/ronak-logo.png",
+  "size": 140822,
+  "url": "/__l5e/assets-v1/98aa9349-1567-4663-b5cd-ba560d7c5329/ronak-logo.png",
+  "version": 1
 }
