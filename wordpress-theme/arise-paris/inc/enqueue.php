@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 function arise_paris_enqueue_assets() {
 	wp_enqueue_style(
 		'arise-paris-fonts',
-		'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap',
 		array(),
 		null
 	);

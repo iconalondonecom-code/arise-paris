@@ -46,24 +46,27 @@ function ProductsPage() {
 
       <section className="py-16 md:py-24 bg-[var(--warm-white)]">
         <div className="container-wide">
-          <div className="flex flex-wrap gap-2 mb-14">
+          <div className="mb-14 flex flex-wrap items-center gap-x-8 gap-y-3 border-b border-[var(--border)] pb-5">
             {chips.map((c) => (
               <button
                 key={c.key}
                 type="button"
                 onClick={() => setGroup(c.key)}
-                className={`px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase border transition ${
+                className={`btn-label pb-1.5 border-b-2 transition ${
                   group === c.key
-                    ? "bg-[var(--ink)] text-white border-[var(--ink)]"
-                    : "border-[var(--border)] text-[var(--body)] hover:border-[var(--ink)] hover:text-[var(--ink)]"
+                    ? "text-[var(--ink)] border-[var(--ink)]"
+                    : "text-[var(--body)] border-transparent hover:text-[var(--ink)]"
                 }`}
               >
                 {c.label}
               </button>
             ))}
+            <span className="ml-auto text-[11px] tracking-[0.2em] uppercase text-[var(--body)]">
+              {filtered.length} Variants
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-x-8 md:gap-y-16">
             {filtered.map((p) => (
               <ProductCard key={p.slug} product={p} />
             ))}

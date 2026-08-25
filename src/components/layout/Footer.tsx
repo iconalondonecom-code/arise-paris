@@ -37,7 +37,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-white text-xs tracking-[0.28em] uppercase mb-6">Products</h4>
-          <ul className="space-y-3 text-[15px] leading-relaxed">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-[15px] leading-relaxed">
             {products.map((p) => (
               <li key={p.slug}>
                 <Link to="/products/$slug" params={{ slug: p.slug }} className="hover:text-[var(--gold)] transition">
@@ -79,7 +79,7 @@ export function Footer() {
               <img src={site.ronakLogo} alt="Ronak Group" className="h-16 w-auto" />
             </a>
             <p className="text-xs mt-3 tracking-wider text-white/60">
-              Arise Paris is a brand of Ronak Group.
+              Parent Group: Ronak Group — Arise Paris is a brand of Ronak Group.
             </p>
           </div>
         </div>
