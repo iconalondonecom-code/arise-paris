@@ -14,6 +14,7 @@ define( 'ARISE_PARIS_URI', get_template_directory_uri() );
 $arise_paris_includes = array(
 	'inc/helpers.php',
 	'inc/product-data.php',
+	'inc/blog-data.php',
 	'inc/setup.php',
 	'inc/enqueue.php',
 	'inc/custom-post-types.php',
