@@ -13,5 +13,6 @@ $pages    = get_pages( array( 'sort_column' => 'post_title' ) );
 	<div><h2><?php esc_html_e( 'Products', 'arise-paris' ); ?></h2><ul><?php foreach ( $products as $p ) : ?><li><a href="<?php echo esc_url( get_permalink( $p ) ); ?>"><?php echo esc_html( $p->post_title ); ?></a></li><?php endforeach; ?></ul></div>
 	<div><h2><?php esc_html_e( 'Blog Posts', 'arise-paris' ); ?></h2><ul><?php foreach ( $posts as $p ) : ?><li><a href="<?php echo esc_url( get_permalink( $p ) ); ?>"><?php echo esc_html( $p->post_title ); ?></a></li><?php endforeach; ?></ul></div>
 </div>
-<?php get_footer(); EOF
+<?php get_footer();
+
 
