@@ -79,7 +79,7 @@ export function Footer() {
               <img src={site.ronakLogo} alt="Ronak Group" className="h-16 w-auto" />
             </a>
             <p className="text-xs mt-3 tracking-wider text-white/60">
-              Arise Paris is a brand of Ronak Group.
+              Parent Group: Ronak Group — Arise Paris is a brand of Ronak Group.
             </p>
           </div>
         </div>
