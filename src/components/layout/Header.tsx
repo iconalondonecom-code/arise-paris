@@ -62,15 +62,16 @@ export function Header({ transparentOverHero = false }: { transparentOverHero?: 
             type="button"
             aria-label={`Open enquiry list (${items.length} products)`}
             onClick={() => setEnquiryOpen(true)}
-            className="relative inline-flex items-center gap-2 border border-white/25 text-white/90 hover:text-[var(--gold-muted)] hover:border-[var(--gold-muted)] transition px-2.5 py-2 md:px-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-2"
+            className={`relative inline-flex items-center gap-2 border transition px-3 py-2 md:px-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--gold-muted)] focus-visible:outline-offset-2 ${
+              items.length > 0
+                ? "border-[var(--gold-muted)] text-[var(--gold-muted)]"
+                : "border-white/25 text-white/90 hover:text-[var(--gold-muted)] hover:border-[var(--gold-muted)]"
+            }`}
           >
             <ClipboardList className="h-[18px] w-[18px]" />
-            <span className="hidden md:inline nav-link">Enquiry List ({items.length})</span>
-            {items.length > 0 && (
-              <span className="md:hidden absolute -top-1 -right-1 grid h-4 w-4 place-items-center rounded-full bg-[var(--gold-muted)] text-[9px] font-semibold text-[#05091A]">
-                {items.length}
-              </span>
-            )}
+            <span className="nav-link text-[13px] md:text-[15px]">
+              <span className="hidden sm:inline">Enquiry List </span>({items.length})
+            </span>
           </button>
           <Link
             to="/request-catalogue"
