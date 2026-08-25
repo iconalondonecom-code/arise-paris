@@ -26,6 +26,7 @@ $arise_paris_includes = array(
 	'inc/forms.php',
 	'inc/enquiry-list.php',
 	'inc/security.php',
+	'inc/demo-import.php',
 );
 
 foreach ( $arise_paris_includes as $arise_paris_file ) {
