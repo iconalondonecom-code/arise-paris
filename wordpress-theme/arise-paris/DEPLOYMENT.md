@@ -2,6 +2,14 @@
 
 Follow these steps in order. Allow roughly 45–60 minutes including QA.
 
+> **Verification note:** this theme was built and reviewed on a machine with no PHP
+> or WordPress runtime available, so every file has been checked by careful manual
+> read-through (structure, brace/paren balance, WordPress API usage) but **not**
+> executed — no `php -l` lint and no real theme activation has been run against it.
+> Treat **Step 4 (Activate)** on a staging site, not production, as the first real
+> test of this theme, and complete Step 14 (console/PHP-log check) before pointing
+> a live domain at it.
+
 ---
 
 ## 1. Back up the current WordPress site
@@ -19,10 +27,11 @@ Do this before anything else.
 
 ---
 
-## 2. Download the theme ZIP
+## 2. Get the theme ZIP
 
-1. In Lovable, open the project files panel.
-2. Download `arise-paris-wordpress-theme.zip`.
+1. The installable file is `wordpress-theme/arise-paris-wordpress-theme.zip` in the
+   project repository (built from the `wordpress-theme/arise-paris/` theme folder).
+2. Copy it to the machine you'll use to access WordPress Admin.
 3. Do **not** unzip it — WordPress needs the ZIP as-is.
 
 ---
@@ -153,6 +162,30 @@ Check desktop (1440/1280), tablet (1024/768) and mobile (390/360):
 1. Purge the caching plugin's cache.
 2. Purge your host/CDN cache (Cloudflare → Caching → Purge Everything).
 3. Hard-reload the site (Ctrl/Cmd + Shift + R) and re-check in a private window.
+
+---
+
+## 12b. Branding assets (Customizer)
+
+Appearance → Customize → **Arise Paris Settings → Branding**:
+
+| Field | Default |
+| --- | --- |
+| Arise Paris Logo URL | `assets/images/logos/arise-paris.png` |
+| Ronak Group Logo URL | `assets/images/logos/ronak-group.png` |
+| Social Share Image URL | `assets/images/logos/og-image.png` |
+
+> **Both logo files are white artwork on a transparent background.** They are
+> designed for the dark navy header, footer and bands, and are invisible on any
+> light background. If you place either logo somewhere light, put a dark plate
+> behind it — this is why `.ronak-association__inner img` carries a navy
+> background in `assets/css/main.css`.
+>
+> For the same reason `og:image` must **not** point at the bare logo: social
+> platforms flatten transparency onto white and the card renders blank. The
+> Social Share Image field defaults to `og-image.png`, a 1200x630 card with the
+> logo pre-composited on navy. Replace it with your own 1200x630 image if you
+> prefer, but keep it opaque.
 
 ---
 

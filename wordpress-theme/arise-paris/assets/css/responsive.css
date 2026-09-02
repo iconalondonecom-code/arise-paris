@@ -4,8 +4,9 @@
 	.products-grid { grid-template-columns: repeat(2, 1fr); }
 	.products-grid--related { grid-template-columns: repeat(2, 1fr); }
 	.collections-grid { grid-template-columns: repeat(2, 1fr); }
-	.footer-columns { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+	.footer-columns { grid-template-columns: 1.4fr 1fr; gap: 44px 40px; }
 	.blog-grid { grid-template-columns: repeat(2, 1fr); }
+	.b2b-benefits__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 1024px) {
@@ -27,12 +28,17 @@
 	.b2b-process__list, .about-chapters__list { grid-template-columns: 1fr 1fr; }
 	.sitemap-grid { grid-template-columns: 1fr 1fr; }
 	.colour-journey__bottle img { height: clamp(180px, 26vw, 300px); }
+	.brand-group__inner, .home-about__inner { grid-template-columns: 1fr; gap: 40px; }
+	.b2b-benefits__grid { grid-template-columns: 1fr 1fr; }
+	.b2b-cols { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 782px) {
 	body { font-size: 16px; }
-	.home-intro, .home-collections, .home-blog, .content-area, .b2b-process, .b2b-partners,
-	.about-chapters, .related-products, .product-explorer, .retail-shelf, .cta-band, .page-hero { padding-top: 64px; padding-bottom: 64px; }
+	.home-intro, .home-about, .home-collections, .home-blog, .content-area, .b2b-process, .b2b-partners,
+	.b2b-intro, .b2b-benefits, .about-intro-section, .about-chapters, .about-values, .related-products,
+	.product-explorer, .retail-shelf, .cta-band, .page-hero, .brand-group { padding-top: 64px; padding-bottom: 64px; }
+	.home-intro, .about-intro-section { padding-bottom: 0; }
 	.colour-journey { padding: 56px 0 48px; }
 	.colour-journey__heading { font-size: clamp(2.4rem, 9vw, 3.2rem); }
 	.colour-journey__stage { padding: 40px 0 28px; }
@@ -41,12 +47,18 @@
 	.colour-journey__bottle.is-active { transform: scale(1.08); }
 	.colour-journey__nav { width: 40px; height: 40px; }
 	.products-grid, .products-grid--related, .collections-grid, .blog-grid,
-	.b2b-process__list, .about-chapters__list, .sitemap-grid, .footer-columns { grid-template-columns: 1fr; }
+	.b2b-process__list, .about-chapters__list, .sitemap-grid, .footer-columns,
+	.b2b-benefits__grid { grid-template-columns: 1fr; }
+	.footer-products { grid-template-columns: repeat(2, 1fr); }
+	.retail-shelf__row { gap: 22px 10px; }
+	.retail-shelf__item { width: clamp(82px, 26vw, 118px); }
+	.contact-map { aspect-ratio: 4 / 3; }
 	.product-card__media img { height: 280px; }
 	.arise-form { padding: 28px; }
 	.product-single__media { padding: 28px; }
 	.footer-legal__inner { justify-content: center; text-align: center; }
-	.enquiry-list-toggle { padding: 10px 12px; }
+	.enquiry-list-toggle { padding: 10px 12px; gap: 6px; }
+	.enquiry-list-label { display: none; }
 	.whatsapp-float { right: 16px; bottom: 16px; }
 	.products-filters__search input { max-width: none; }
 	.products-filters__meta { flex-direction: column; align-items: flex-start; }
@@ -56,5 +68,7 @@
 	.btn { width: 100%; }
 	.btn-small, .products-filters__search .btn { width: auto; }
 	.colour-journey__actions .btn { width: 100%; }
-	.ronak-association__inner { text-align: center; justify-content: center; }
+	.brand-group { padding: 72px 0; }
+	.brand-group__aside { padding: 28px; }
+	.about-values__list span { font-size: 1.1rem; padding: 12px 18px; }
 }

@@ -17,6 +17,7 @@ function arise_paris_defaults() {
 	return array(
 		'logo_arise'          => ARISE_PARIS_URI . '/assets/images/logos/arise-paris.png',
 		'logo_ronak'          => ARISE_PARIS_URI . '/assets/images/logos/ronak-group.png',
+		'og_image'            => ARISE_PARIS_URI . '/assets/images/logos/og-image.png',
 		'email'               => 'contact@ronak.global',
 		'phone_uae'           => '+971 50 137 7674',
 		'phone_india'         => '+91 99985 69923',
@@ -116,14 +117,27 @@ function arise_paris_product_meta( $post_id, $key, $default = '' ) {
 /**
  * Get a product's primary image URL: featured image first, seed fallback second.
  *
+ * Product packshots are tall, edge-to-edge PNGs (the bottle fills the frame top
+ * to bottom). They are always served at full size and framed with CSS
+ * `object-fit: contain`. Cropped intermediate sizes are deliberately avoided —
+ * a hard-cropped size (e.g. a legacy "arise-product-card" generated with crop
+ * enabled) slices the cap and base off every bottle. The $size argument is kept
+ * for backwards compatibility with existing callers but is no longer used for
+ * the featured image.
+ *
  * @param int    $post_id Product post ID.
  * @param string $slug    Product slug (for seed fallback).
- * @param string $size    Image size.
+ * @param string $size    Deprecated; retained for call-site compatibility.
  * @return string
  */
-function arise_paris_product_image( $post_id, $slug = '', $size = 'large' ) {
+function arise_paris_product_image( $post_id, $slug = '', $size = 'full' ) {
+	unset( $size );
+
 	if ( has_post_thumbnail( $post_id ) ) {
-		return get_the_post_thumbnail_url( $post_id, $size );
+		$url = get_the_post_thumbnail_url( $post_id, 'full' );
+		if ( $url ) {
+			return $url;
+		}
 	}
 
 	if ( $slug ) {
@@ -165,3 +179,50 @@ function arise_paris_trim( $text, $length = 160 ) {
 
 	return mb_substr( $text, 0, $length - 1 ) . '…';
 }
+
+/**
+ * IDs of WordPress' default placeholder content ("Hello world!" post) so it can
+ * be kept out of the journal grid and blog listing until the client deletes it.
+ *
+ * Cached for the request. Only matches the untouched sample post — once the
+ * client edits its slug or title it is treated as a real article again.
+ *
+ * @return array<int>
+ */
+function arise_paris_placeholder_post_ids() {
+	static $ids = null;
+	if ( null !== $ids ) {
+		return $ids;
+	}
+
+	$ids  = array();
+	$post = get_page_by_path( 'hello-world', OBJECT, 'post' );
+	if ( $post && 'Hello world!' === $post->post_title ) {
+		$ids[] = (int) $post->ID;
+	}
+
+	return $ids;
+}
+
+/**
+ * Keep the untouched "Hello world!" sample post out of the blog posts page and
+ * the main feed. Front-page and other secondary queries exclude it directly.
+ *
+ * @param WP_Query $query Query instance.
+ * @return void
+ */
+function arise_paris_exclude_placeholder_posts( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	if ( ! ( $query->is_home() || $query->is_category() || $query->is_tag() || $query->is_feed() ) ) {
+		return;
+	}
+	$placeholder = arise_paris_placeholder_post_ids();
+	if ( ! $placeholder ) {
+		return;
+	}
+	$existing = array_filter( (array) $query->get( 'post__not_in' ) );
+	$query->set( 'post__not_in', array_values( array_unique( array_merge( $existing, $placeholder ) ) ) );
+}
+add_action( 'pre_get_posts', 'arise_paris_exclude_placeholder_posts' );

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ARISE_PARIS_VERSION', '1.0.0' );
+define( 'ARISE_PARIS_VERSION', '1.0.2' );
 define( 'ARISE_PARIS_DIR', get_template_directory() );
 define( 'ARISE_PARIS_URI', get_template_directory_uri() );
 

@@ -17,7 +17,7 @@ $collection = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '';
 ?>
 <article class="product-card" style="--product-accent: <?php echo esc_attr( $accent ); ?>" data-product-card data-collection="<?php echo esc_attr( $collection ); ?>" data-name="<?php echo esc_attr( get_the_title() ); ?>">
 	<a class="product-card__media" href="<?php the_permalink(); ?>">
-		<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="640" height="900" />
+		<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="546" height="1920" />
 	</a>
 	<div class="product-card__body">
 		<?php if ( $collection ) : ?>

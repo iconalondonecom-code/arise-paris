@@ -294,6 +294,14 @@ function arise_paris_run_import() {
 		}
 	}
 
+	// --- Remove WordPress' default placeholder content --------------------
+	foreach ( array( 'hello-world' => 'post', 'sample-page' => 'page' ) as $slug => $type ) {
+		$placeholder = get_page_by_path( $slug, OBJECT, $type );
+		if ( $placeholder && 'trash' !== $placeholder->post_status ) {
+			wp_trash_post( $placeholder->ID );
+		}
+	}
+
 	// --- Menus --------------------------------------------------------------
 	arise_paris_build_menu(
 		'Arise Paris Primary',

@@ -82,7 +82,9 @@ function arise_paris_seo_image() {
 	if ( is_singular() && has_post_thumbnail() ) {
 		return get_the_post_thumbnail_url( get_the_ID(), 'large' );
 	}
-	return arise_paris_option( 'logo_arise' );
+	// The bare logo is white-on-transparent and composites to a blank card on
+	// most social platforms, so fall back to the pre-rendered share image.
+	return arise_paris_option( 'og_image' );
 }
 
 function arise_paris_output_meta_tags() {

@@ -2,9 +2,15 @@
 defined( 'ABSPATH' ) || exit;
 
 function arise_paris_enquiry_list_badge() {
-	echo '<button type="button" class="enquiry-list-toggle" aria-haspopup="dialog" aria-controls="enquiry-list-drawer" aria-label="' . esc_attr__( 'Open enquiry list', 'arise-paris' ) . '">' .
-		'<span class="enquiry-list-icon" aria-hidden="true">&#9776;</span>' .
-		'<span class="enquiry-list-count" data-enquiry-count>0</span></button>';
+	$icon = '<svg class="enquiry-list-icon" aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'
+		. '<path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z"/>'
+		. '<path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/>'
+		. '<path d="M9 12h6M9 16h4"/></svg>';
+
+	echo '<button type="button" class="enquiry-list-toggle" aria-haspopup="dialog" aria-controls="enquiry-list-drawer" aria-label="' . esc_attr__( 'Open enquiry list', 'arise-paris' ) . '">'
+		. $icon // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static markup.
+		. '<span class="enquiry-list-label">' . esc_html__( 'Enquiry', 'arise-paris' ) . '</span>'
+		. '<span class="enquiry-list-count" data-enquiry-count>0</span></button>';
 }
 
 function arise_paris_enquiry_list_drawer() {

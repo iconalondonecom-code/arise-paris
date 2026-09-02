@@ -27,6 +27,29 @@ get_header();
 	</div>
 </section>
 
+<section class="home-about">
+	<div class="container home-about__inner">
+		<div class="home-about__lead">
+			<?php
+			get_template_part(
+				'template-parts/global/section-heading',
+				null,
+				array(
+					'eyebrow' => __( 'The House of Arise Paris', 'arise-paris' ),
+					'heading' => __( 'A Contemporary Body-Fragrance Brand, Arranged for Retail', 'arise-paris' ),
+					'align'   => 'left',
+				)
+			);
+			?>
+		</div>
+		<div class="home-about__body">
+			<p><?php esc_html_e( 'Arise Paris brings bold, fresh, rich and soft fragrance identities together in a single deodorant body spray collection. Every variant shares one 250 ml / 8.45 fl. oz. format and a consistent visual language, so a distributor can build a full, recognisable shelf around one trusted name.', 'arise-paris' ); ?></p>
+			<p><?php esc_html_e( 'The range is designed for modern personal-care aisles across international markets — distinctive enough to stand out on the shelf, cohesive enough to merchandise as a family. Behind it stands Ronak Group, the parent company, with the manufacturing and export experience to support partners at scale.', 'arise-paris' ); ?></p>
+			<a class="btn btn-outline" href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'More About the Brand', 'arise-paris' ); ?></a>
+		</div>
+	</div>
+</section>
+
 <?php get_template_part( 'template-parts/products/explorer' ); ?>
 
 <section class="home-collections">
@@ -61,9 +84,11 @@ get_header();
 <?php
 $recent_posts = new WP_Query(
 	array(
-		'post_type'      => 'post',
-		'posts_per_page' => 3,
+		'post_type'           => 'post',
+		'posts_per_page'      => 3,
 		'ignore_sticky_posts' => true,
+		'post__not_in'        => arise_paris_placeholder_post_ids(),
+		'no_found_rows'       => true,
 	)
 );
 if ( $recent_posts->have_posts() ) :
@@ -86,12 +111,16 @@ if ( $recent_posts->have_posts() ) :
 					$recent_posts->the_post();
 					?>
 					<article <?php post_class( 'blog-card' ); ?>>
-						<a class="blog-card__media" href="<?php the_permalink(); ?>">
-							<?php if ( has_post_thumbnail() ) : ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a class="blog-card__media" href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail( 'arise-blog-card' ); ?>
-							<?php endif; ?>
-						</a>
+							</a>
+						<?php endif; ?>
 						<div class="blog-card__body">
+							<?php $category = get_the_category_list( ', ' ); ?>
+							<?php if ( $category ) : ?>
+								<p class="blog-card__category"><?php echo esc_html( wp_strip_all_tags( $category ) ); ?></p>
+							<?php endif; ?>
 							<h3 class="blog-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<p class="blog-card__excerpt"><?php echo esc_html( arise_paris_trim( get_the_excerpt(), 120 ) ); ?></p>
 						</div>

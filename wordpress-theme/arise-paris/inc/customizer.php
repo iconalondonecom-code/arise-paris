@@ -26,6 +26,7 @@ function arise_paris_customize_register( $wp_customize ) {
 	$fields = array(
 		'logo_arise'            => array( 'branding', 'text', __( 'Arise Paris Logo URL', 'arise-paris' ) ),
 		'logo_ronak'            => array( 'branding', 'text', __( 'Ronak Group Logo URL', 'arise-paris' ) ),
+		'og_image'              => array( 'branding', 'text', __( 'Social Share Image URL', 'arise-paris' ) ),
 		'email'                 => array( 'contact', 'text', __( 'Contact Email', 'arise-paris' ) ),
 		'phone_uae'             => array( 'contact', 'text', __( 'UAE Phone', 'arise-paris' ) ),
 		'phone_india'           => array( 'contact', 'text', __( 'India Phone', 'arise-paris' ) ),

@@ -29,7 +29,10 @@ function arise_paris_setup() {
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/css/editor.css' );
 
-	add_image_size( 'arise-product-card', 640, 900, true );
+	// Product imagery is bottle-on-transparent artwork with varied aspect ratios,
+	// so it must be resized without a hard crop — a forced crop clips the bottle
+	// top and bottom on the retail shelf and explorer thumbnails.
+	add_image_size( 'arise-product-card', 640, 900, false );
 	add_image_size( 'arise-product-hero', 900, 1300, false );
 	add_image_size( 'arise-blog-card', 800, 500, true );
 

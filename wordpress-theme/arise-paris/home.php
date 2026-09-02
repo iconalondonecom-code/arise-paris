@@ -28,13 +28,16 @@ get_template_part(
 				the_post();
 				?>
 				<article <?php post_class( 'blog-card' ); ?>>
-					<a class="blog-card__media" href="<?php the_permalink(); ?>">
-						<?php if ( has_post_thumbnail() ) : ?>
+					<?php if ( has_post_thumbnail() ) : ?>
+						<a class="blog-card__media" href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'arise-blog-card' ); ?>
-						<?php endif; ?>
-					</a>
+						</a>
+					<?php endif; ?>
 					<div class="blog-card__body">
-						<p class="blog-card__category"><?php echo esc_html( get_the_category_list( ', ' ) ); ?></p>
+						<?php $category = get_the_category_list( ', ' ); ?>
+						<?php if ( $category ) : ?>
+							<p class="blog-card__category"><?php echo esc_html( wp_strip_all_tags( $category ) ); ?></p>
+						<?php endif; ?>
 						<h2 class="blog-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<p class="blog-card__excerpt"><?php echo esc_html( arise_paris_trim( get_the_excerpt(), 140 ) ); ?></p>
 						<?php if ( arise_paris_option( 'blog_show_date' ) ) : ?>

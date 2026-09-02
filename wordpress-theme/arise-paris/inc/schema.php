@@ -127,7 +127,7 @@ function arise_paris_schema_article() {
 		),
 		'publisher'        => array( '@id' => home_url( '/#organization' ) ),
 		'mainEntityOfPage' => get_permalink(),
-		'image'            => has_post_thumbnail( $post_id ) ? get_the_post_thumbnail_url( $post_id, 'large' ) : arise_paris_option( 'logo_arise' ),
+		'image'            => has_post_thumbnail( $post_id ) ? get_the_post_thumbnail_url( $post_id, 'large' ) : arise_paris_option( 'og_image' ),
 		'description'      => arise_paris_trim( get_the_excerpt() ),
 	);
 }
